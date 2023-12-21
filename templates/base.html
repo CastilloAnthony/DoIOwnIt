@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}DoIOwnIt{% endblock %}</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+    <body>
+        <ul>
+            <li><a class="home-link" href="/home">Home</a></li>
+
+            <li class="dropdown">
+                <a href="/games">Games</a>
+                <div class="dropdown-content">
+                    <a href="/games/search">Search for a Game</a>
+                    <a href="/games/listGames">List all Games</a>
+                    <a href="/games/reload">Reload</a>
+                </div>
+            </li>
+        
+            <li class="dropdown">
+                <a href="/services">Services</a>
+                <div class="dropdown-content">
+                    <a href="/services/steam">Steam</a>
+                    <a href="/services/epic">Epic</a>
+                    <a href="/services/battleNet">Battle.Net</a>
+                    <a href="/services/gog">GoG</a>
+                    <a href="/services/ea">EA</a>
+                    <a href="/services/uplay">Uplay</a>
+                    <a href="/services/xboxLive">Xbox Live</a>
+                    <a href="/services/playstation">Playstation</a>
+                    <a href="/services/nintendo">Nintendo</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="/help">Help</a>
+            </li>
+
+            <li>
+                <a href="/about">About</a>
+            </li>
+
+            <li class="dropdown">
+                <a id="currentTime"></a>
+            </li>
+            <script>
+                function updateTime() {
+                    var currentTimeElement = document.getElementById("currentTime");
+                    var currentTime = new Date();
+                    
+                    var hours = currentTime.getHours();
+                    var minutes = currentTime.getMinutes();
+                    var seconds = currentTime.getSeconds();
+
+                    // Add leading zero if needed
+                    hours = (hours < 10) ? "0" + hours : hours;
+                    minutes = (minutes < 10) ? "0" + minutes : minutes;
+                    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+                    var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+                    currentTimeElement.textContent = formattedTime;
+                }
+
+                // Update the time every second (1000 milliseconds)
+                setInterval(updateTime, 1000);
+
+                // Initial call to display the time immediately
+                updateTime();
+            </script>
+
+        </ul>
+        <br>
+        <br>
+        <main>
+            {%block content%}{% endblock %}
+        </main>
+    </body>
+<html>

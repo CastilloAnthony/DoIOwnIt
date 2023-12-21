@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="pageTitle">List of Games</h1><br>
+    <div>
+        <table class="info">
+            <tr>
+                <th>Service(s)</th>
+                <th>Name of Game</th>
+            </tr>
+            {% for game in list['steam'] %}
+                <tr>
+                    <th>Steam</th>
+                    <th>{{ game }}</th>
+                </tr>    
+            {% endfor %}
+            
+        </table>
+    </div>
+
+{% endblock %}

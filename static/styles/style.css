@@ -1,0 +1,168 @@
+html{
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px black;
+}
+
+li a:hover {
+    background-color: #555;
+}
+/*centering forms wrapped in div*/
+div {
+    text-align: center;
+}
+/*forms styling*/
+form {
+    color: white;
+    background-color: rgba(52, 169, 67, 50%);
+    border-radius: 10px;
+
+    margin: auto;
+    width: 70%;
+    height: auto;
+    text-align: justify;
+    padding: 10px
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-shadow: 0px 0px black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    text-shadow: 0px 0px black;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Home link styling */
+.home-link {
+    background-color: #4CAF50; /* Green */
+}
+
+/*homepage styling*/
+.home {
+    color: white;
+    background: rgba(52, 169, 67, 50%);
+    border-radius: 10px;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    font-size: x-large;
+    padding: 10px;
+    text-shadow: 2px 2px 3px black;
+}
+
+/*add website styling*/
+.form {
+    text-align: center;
+    padding: 10px;
+}
+
+/*button styling*/
+input[type=submit] {
+    background-color: gray;
+    color: black;
+}
+
+input[type=submit]:hover {
+    background-color: #4CAF50;
+    color: black;
+}
+
+/* Added by Anthony */
+.timestamp {
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px black;
+}
+
+.pageTitle {
+    color: white;
+    background: rgba(52, 169, 67, 50%);
+    border-radius: 10px;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 2px 2px 3px black;
+}
+
+.info {
+    color: white;
+    background: rgba(52, 169, 67, 50%);
+    border-radius: 10px;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 2px 2px 3px black;
+}
+
+.table {
+    color: white;
+    background: rgba(52, 169, 67, 50%);
+    border-radius: 10px;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 15px;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+}

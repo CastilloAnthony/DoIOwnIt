@@ -141,7 +141,7 @@ input[type=submit]:hover {
     background: rgba(52, 169, 67, 50%);
     border-radius: 10px;
     margin: auto;
-    width: 25%;
+    width: 50%;
     text-align: center;
     padding: 10px;
     text-shadow: 2px 2px 3px black;
@@ -152,7 +152,7 @@ input[type=submit]:hover {
     background: rgba(52, 169, 67, 50%);
     border-radius: 10px;
     margin: auto;
-    width: 25%;
+    width: 50%;
     text-align: center;
     text-shadow: 2px 2px 3px black;
 }

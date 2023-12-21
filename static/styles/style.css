@@ -1,5 +1,5 @@
 html{
-    background-image: url('/static/images/background.jpg');
+    background-image: url('/static/images/background_zerg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,7 +42,6 @@ form {
     color: white;
     background-color: rgba(52, 169, 67, 50%);
     border-radius: 10px;
-
     margin: auto;
     width: 70%;
     height: auto;
@@ -116,6 +115,19 @@ input[type=submit]:hover {
 }
 
 /* Added by Anthony */
+#currentTime {
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-shadow: 2px 2px 3px black;
+    text-align: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
 .timestamp {
     display: block;
     color: white;

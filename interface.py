@@ -12,9 +12,9 @@ class Interface():
         self.__interface.secret_key = str(uuid.uuid4())
         self._configure_routes()
         self.__processManager = ProcessManager()
-        self.__accounts = {'steam':None, 'epic':None, 'battleNet':None, 'gog':None, 'ea':None, 'uplay':None}
-        self.__games = {'steam':None, 'epic':None, 'battleNet':None, 'gog':None, 'ea':None, 'uplay':None}
-        webbrowser.open("http://127.0.0.1:7777/home")
+        self.__accounts = {'steam':None, 'epic':None, 'battleNet':None, 'gog':None, 'ea':None, 'uplay':None, 'xboxLive':None, 'playstation':None, 'nintendo':None,}
+        self.__games = {'steam':None, 'epic':None, 'battleNet':None, 'gog':None, 'ea':None, 'uplay':None, 'xboxLive':None, 'playstation':None, 'nintendo':None,}
+        webbrowser.open("http://127.0.0.1:7777/")
 
     def __del__(self):
         del self.__interface, self.__processManager
@@ -24,15 +24,18 @@ class Interface():
 
     def _configure_routes(self):
         rulesList = [
-            {'route':'/home', 'page':'home', 'function':self.home, 'methods':None},
+            # Basic Routes
+            {'route':'/', 'page':'home', 'function':self.home, 'methods':None},
             {'route':'/about', 'page':'about', 'function':self.about, 'methods':None},
             {'route':'/help', 'page':'help', 'function':self.help, 'methods':None},
-            
+
+            # Games Routes
             {'route':'/games', 'page':'games', 'function':self.games, 'methods':None},
             {'route':'/games/search', 'page':'search', 'function':self.search, 'methods':None},
             {'route':'/games/listGames', 'page':'listGames', 'function':self.listGames, 'methods':None},
             {'route':'/games/reload', 'page':'reload', 'function':self.reload, 'methods':None},
 
+            # Services Routes
             {'route':'/services', 'page':'services', 'function':self.services, 'methods':None},
             {'route':'/services/steam', 'page':'steam', 'function':self.steam, 'methods':None},
             {'route':'/services/steam/newSteam', 'page':'newSteam', 'function':self.newSteam, 'methods':['POST']},
@@ -58,7 +61,7 @@ class Interface():
         del rulesList
 
     def home(self):
-        return render_template('home.html', timestamp=time.ctime())
+        return render_template('home.html')
     
     def about(self):
         return render_template('about.html')
@@ -74,7 +77,28 @@ class Interface():
         return render_template('search.html')
     
     def listGames(self):
-        return render_template('listGames.html', list=self.__games)
+        if (not self.__games['steam'] == None or 
+            not self.__games['epic'] == None or 
+            not self.__games['battleNet'] == None or 
+            not self.__games['gog'] == None or 
+            not self.__games['ea'] == None or 
+            not self.__games['uplay'] == None or 
+            not self.__games['xboxLive'] == None or 
+            not self.__games['playstation'] == None or 
+            not self.__games['nintendo'] == None
+        ):
+            games = {}
+            for service in self.__games:
+                if self.__games[service] != None:
+                    for game in self.__games[service]:
+                        if game not in games:
+                            games[game] = [service]
+                        else:
+                            if service not in games[game]:
+                                games[game].append(service)
+            return render_template('listGames.html', list=games)
+        else:
+            return redirect(url_for('games'))
     
     def reload(self):
         return render_template('reload.html')

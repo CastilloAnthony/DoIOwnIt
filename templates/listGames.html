@@ -8,9 +8,13 @@
                 <th>Service(s)</th>
                 <th>Name of Game</th>
             </tr>
-            {% for game in list['steam'] %}
+            {% for game in list %}
                 <tr>
-                    <th>Steam</th>
+                    <th>
+                        {% for service in list[game] %}
+                        {{ service|capitalize }}
+                        {% endfor %}
+                    </th>
                     <th>{{ game }}</th>
                 </tr>    
             {% endfor %}

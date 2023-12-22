@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <h1 class="pageTitle">Connected Services</h1><br>
+    <div class="info">
+        <table border="0">
+            <tr>
+                <th>Service</th>
+                <th>User ID</th>
+            </tr>
+            {% for service in list %}
+                <tr>
+                    <th>{{ service|capitalize}}</th>
+                    <th>{{ list[service] }}</th>
+                </tr>    
+            {% endfor %}
+            
+        </table>
+    </div>
 {% endblock %}

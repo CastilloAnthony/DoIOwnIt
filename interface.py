@@ -105,7 +105,7 @@ class Interface():
     
     # Services
     def services(self):
-        return render_template('services.html')
+        return render_template('services.html', list=self.__accounts)
     
     def steam(self):
         return render_template('steam.html')

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="pageTitle">{{ game }}</h1><br>
+    <div class="info">
+        <table border="0">
+            <tr>
+                <th>Service</th>
+            </tr>
+            {% for service in services %}
+                <tr>
+                    <th>
+                        {{ service|capitalize }}
+                    </th>
+                </tr>
+            {% endfor %}
+        </trable>
+    </div>
+{% endblock %}

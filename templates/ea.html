@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <h1 class="pageTitle">EA Connection (WIP)</h1><br>
+    <form class="info" action="ea/newEa" method="POST" onsubmit="return validateForm()">
+        <label for="userID">User ID:</label>
+        <input type="text" id="userID" name="userID">
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}

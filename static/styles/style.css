@@ -40,13 +40,13 @@ div {
 /*forms styling*/
 form {
     color: white;
-    background-color: rgba(52, 169, 67, 50%);
+    /*background-color: rgba(52, 169, 67, 50%);
     border-radius: 10px;
     margin: auto;
     width: 70%;
     height: auto;
     text-align: justify;
-    padding: 10px
+    padding: 10px*/
 }
 
 .dropdown {

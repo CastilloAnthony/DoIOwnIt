@@ -7,11 +7,17 @@
             <tr>
                 <th>Service</th>
                 <th>User ID</th>
+                <th></th>
             </tr>
             {% for service in list %}
                 <tr>
                     <th>{{ service|capitalize}}</th>
                     <th>{{ list[service] }}</th>
+                    <th>
+                        <form action="services/{{ service }}" method="GET" onsubmit="return validateForm()">
+                            <input type="submit" value="Connect">
+                        </form>
+                    </th>
                 </tr>    
             {% endfor %}
             

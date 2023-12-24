@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <h1 class="pageTitle">Search for a Game</h1><br>
+    <form class="info" action="search/newSearch" method="POST" onsubmit="return validateForm()">
+        <label for="game">Name of Game:</label>
+        <input type="text" id="game" name="game">
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}

@@ -27,7 +27,7 @@ def checkSteam(id):#username, id):
     return listOfGames
 
 def checkEpic(username):
-    pass
+    print('Epic is not Supported.\n'+username)
 
 def checkBattleNet(username):
     pass
@@ -39,4 +39,13 @@ def checkEa(username):
     pass
 
 def checkUplay(username):
+    pass
+
+def checkXboxLive(username):
+    pass
+
+def checkPlaystation(username):
+    apiKey= {"npsso":"6aAFJd53dTJLVmtUXmwsOjgQYpiQZM1OfWk7L8O8CQ1XfAEOwcZVntp3gYbdkvCy"}
+
+def checkNintendo(username):
     pass
